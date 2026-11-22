@@ -88,7 +88,7 @@ export const portalPreview = {
       "posted_on": "2026-11-17",
       "title": "Our New Website Is Live!",
       "body": "Welcome to the new Brillare Scholars website! Our Student Portal is open to everyone. Start with Real Estate Foundations, or pick a bonus module that interests you. You can go at your own pace without signing up.",
-      "related_section": "core"
+      "related_section": "portal"
     },
     {
       "id": "20000000-0000-4000-8000-000000000001",

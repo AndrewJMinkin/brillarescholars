@@ -162,19 +162,16 @@ function renderAnnouncements() {
     const text = document.createElement("p");
     text.textContent = news.body;
     body.append(title, text);
-    if (["core", "bonus", "linkedin"].includes(news.related_section)) {
+    const destinations = {
+      portal: ["/student-portal/", "Open the Student Portal →"],
+      core: ["#core", "Explore core curriculum →"],
+      bonus: ["#bonus", "Explore bonus modules →"],
+      linkedin: ["https://www.linkedin.com/company/brillarescholars", "Brillare Scholars on LinkedIn →"],
+    };
+    if (Object.hasOwn(destinations, news.related_section)) {
       const link = document.createElement("a");
       link.className = "text-link";
-      link.href =
-        news.related_section === "linkedin"
-          ? "https://www.linkedin.com/company/brillarescholars"
-          : "#" + news.related_section;
-      link.textContent =
-        news.related_section === "linkedin"
-          ? "Brillare Scholars on LinkedIn →"
-          : news.related_section === "core"
-            ? "Explore core curriculum →"
-            : "Explore bonus modules →";
+      [link.href, link.textContent] = destinations[news.related_section];
       body.append(link);
     }
     article.append(date, body);
